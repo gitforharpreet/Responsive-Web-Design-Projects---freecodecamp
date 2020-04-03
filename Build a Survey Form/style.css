@@ -1,0 +1,48 @@
+body {
+    background-color: thistle;
+    height: auto;
+}
+
+#title, #description {
+    text-align: center;
+}
+
+#img-div {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin: auto;
+}
+
+img {
+    margin: 0px 0px 0px 20px;
+}
+
+#quote-div {
+    text-align: right;
+}
+
+#quote {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#quote-1 {
+    font-style: italic;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#form-div {
+    width: 50%;
+    height: auto;
+    float: right;
+    margin: auto;
+}
+
+#form1-div {
+    width: 80%;
+    margin: 0px 0px 0px 10%;
+}
