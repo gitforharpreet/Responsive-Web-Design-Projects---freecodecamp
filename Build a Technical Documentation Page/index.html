@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+        <title>Technical Document</title>
+    </head>
+
+    <body>
+
+        <div id="nav-div">
+            <nav id="navbar">
+                <header>
+                    Python Tutorial
+                </header>
+                <hr>
+                <ul>
+                    <li><a class="nav-link" href="#Introduction_to_Python">Introduction to Python</a></li>
+                    <li><a class="nav-link" href="#Arguements_and_Variables">Arguements and Variables</a></li>
+                    <li><a class="nav-link" href="#Controls">Controls</a></li>
+                    <li><a class="nav-link" href="#Functions">Functions</a></li>
+                    <li><a class="nav-link" href="#DataStructures">DataStructures</a></li>
+                    <li><a class="nav-link" href="#Understanding_Modules">Understanding Modules</a></li>
+                    <li><a class="nav-link" href="#Errors_and_Exceptions">Errors and Exceptions</a></li>
+                    <li><a class="nav-link" href="#Classes">Classes</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+
+        <main id="main-doc">
+
+            <h1>Python Tutorial</h1>
+
+            <section class="main-section" id="Introduction_to_Python">
+                <header><h2>Introduction to Python</h2></header>
+            
+                <p>
+                    In the following examples, input and output are distinguished by the presence or absence of prompts (>>> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+                </p>
+
+                <p>Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.          
+                </p>
+                <p>Some examples:</p>
+                <pre>
+                    <code>
+                        # this is the first comment
+                        spam = 1  # and this is the second comment
+                        # ... and now a third!
+                        text = "# This is not a comment because it's inside quotes."
+                    </code>
+                </pre>
+                <p>
+                    Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+                    Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+                    Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+                    Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+                    Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+                </p>
+            </section>
+
+            <section class="main-section" id="Arguements_and_Variables">
+                <header ><h2>Arguements and Variables</h2></header>
+            
+                <h3>Arguements</h3>
+                    <p>
+                        When known to the interpreter, the script name and additional arguments thereafter are turned 
+                        into a list of strings and assigned to the <span>argv</span> variable 
+                        in the <span>sys</span> module. You can access this list by executing <span>import sys</span>. 
+                        The length of the list is at least one; when no script and no arguments are given, 
+                        <span>sys.argv[0]</span> is an empty string. When the script name is given as '-' (meaning standard input),
+                        <span>sys.argv[0]</span> is set to '-'. When <span>-c</span> command is used, <span>sys.argv[0]</span> is set to <span>'-c'</span>. 
+                        When <span>-m</span> module is used, <span>sys.argv[0]</span> is set to the full name of the located module. 
+                        Options found after <span>'-c'</span> command or <span>'-m'</span> module are not consumed by the Python interpreter’s 
+                        option processing but left in sys.argv for the command or module to handle.
+                    </p>
+
+                    <pre>
+                        <code>
+                            $ python3.8
+                            Python 3.8 (default, Sep 16 2015, 09:25:04)
+                            [GCC 4.8.2] on linux
+                            Type "help", "copyright", "credits" or "license" for more information.
+                            >>>
+                        </code>
+                    </pre>
+
+                <h3>Variables</h3>
+                    <h4>Numbers</h4>
+
+                    <p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. 
+                        Expression syntax is straightforward: the operators <span>+, -, *</span> and <span>/</span> work just like in 
+                        most other languages (for example, Pascal or C); parentheses <span>(())</span> can be used for grouping. For example:</p>
+
+                    <pre>
+                        <code>
+                            >>> 2 + 2
+                            4
+                            >>> 50 - 5*6
+                            20
+                            >>> (50 - 5*6) / 4
+                            5.0
+                            >>> 8 / 5  # division always returns a floating point number
+                            1.6
+                        </code>
+                    </pre>
+
+                    <p>
+                        The integer numbers (e.g. <span>2</span>, <span>4</span>, <span>20</span>) have type <span>int</span>, the ones 
+                        with a fractional part (e.g. <span>5.0</span>, <span>1.6</span>) have type <span>float</span>. We will see more 
+                        about numeric types later in the tutorial. Division (<span>/</span>) always returns a <span>float</span>. 
+                        To do floor division and get an <span>integer</span> result (discarding any fractional result) you can use 
+                        the <span>//</span> operator; to calculate the remainder you can use <span>%</span>:
+                    </p>
+
+                    <pre>
+                        <code>
+                            >>> 17 / 3  # classic division returns a float
+                            5.666666666666667
+                            >>>
+                            >>> 17 // 3  # floor division discards the fractional part
+                            5
+                            >>> 17 % 3  # the % operator returns the remainder of the division
+                            2
+                            >>> 5 * 3 + 2  # result * divisor + remainder
+                            17
+                        </code>
+                    </pre>
+
+                    <h4>Strings</h4>
+
+                    <p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. 
+                        They can be enclosed in single quotes (<span>'...'</span>) or double quotes (<span>"..."</span>) with the same result 2. 
+                        <span>\</span> can be used to escape quotes:
+                    </p>
+
+                    <pre>
+                        <code>
+                            >>> 'spam eggs'  # single quotes
+                            'spam eggs'
+                            >>> 'doesn\'t'  # use \' to escape the single quote...
+                            "doesn't"
+                            >>> "doesn't"  # ...or use double quotes instead
+                            "doesn't"
+                            >>> '"Yes," they said.'
+                            '"Yes," they said.'
+                            >>> "\"Yes,\" they said."
+                            '"Yes," they said.'
+                            >>> '"Isn\'t," they said.'
+                            '"Isn\'t," they said.'
+                        </code>
+                    </pre>
+            </section>
+
+            <section class="main-section" id="Controls">
+                <header ><h2>Controls</h2></header>
+
+                <ul>
+                    <li><h3>if Statements</h3>
+                    
+                    <p>Perhaps the most well-known statement type is the <span>if</span> statement. 
+                        There can be zero or more <span>elif</span> parts, and the <span>else</span> part is optional. 
+                        The keyword <span>‘elif’</span> is short for <span>‘else if’</span>, and is useful to avoid excessive indentation. 
+                        An if … elif … elif … sequence is a substitute for the <span>switch or case statements found in other languages.
+                        For example:</p>
+                    
+                    <pre>
+                        <code>
+                            >>> x = int(input("Please enter an integer: "))
+                            Please enter an integer: 42
+                            >>> if x < 0:
+                            ...     x = 0
+                            ...     print('Negative changed to zero')
+                            ... elif x == 0:
+                            ...     print('Zero')
+                            ... elif x == 1:
+                            ...     print('Single')
+                            ... else:
+                            ...     print('More')
+                            More
+                        </code>
+                    </pre>
+                    </li>
+                    <li>
+                        <h3>for Statements</h3>
+                        <p>
+                            The <span>for</span> statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):
+                        </p>
+                        <pre>
+                            <code>
+                                ... words = ['cat', 'window', 'defenestrate']
+                                >>> for w in words:
+                                ...     print(w, len(w))
+                                ...
+                                cat 3
+                                window 6
+                                defenestrate 12
+                            </code>
+                        </pre>
+
+                    </li>
+                    <li>
+                        <h3>The range() Function</h3>
+
+                        <p>
+                            If you do need to iterate over a sequence of numbers, the built-in function <span>range()</span> comes in handy. It generates arithmetic progressions:
+                        </p>
+
+                        <pre>
+                            <code>
+                                >>> for i in range(5):
+                                    ...     print(i)
+                                    ...
+                                    0
+                                    1
+                                    2
+                                    3
+                                    4
+                            </code>
+                        </pre>
+
+                    </li>
+                    <li>
+                        <h3>break and continue Statements, and else Clauses on Loops</h3>
+
+                        <p>The <span>break</span> statement, like in C, breaks out of the innermost enclosing for or while loop.
+                           Loop statements may have an <span>else</span> clause; it is executed when the loop terminates through exhaustion of the 
+                           iterable (with <span>for</span>) or when the condition becomes false (with <span>while</span>), but not when the loop is terminated 
+                           by a <span>break</span> statement. This is exemplified by the following loop, which searches for prime numbers:
+                        </p>
+                        <pre>
+                            <code>
+                                >>> for n in range(2, 10):
+                                    ...     for x in range(2, n):
+                                    ...         if n % x == 0:
+                                    ...             print(n, 'equals', x, '*', n//x)
+                                    ...             break
+                                    ...     else:
+                                    ...         # loop fell through without finding a factor
+                                    ...         print(n, 'is a prime number')
+                                    ...
+                                    2 is a prime number
+                                    3 is a prime number
+                                    4 equals 2 * 2
+                                    5 is a prime number
+                                    6 equals 2 * 3
+                                    7 is a prime number
+                                    8 equals 2 * 4
+                                    9 equals 3 * 3
+                            </code>
+                        </pre>
+
+                    </li>
+                    <li>
+                        <h3>pass Statements</h3>
+                        <p>The <span>pass</span> statement does nothing. It can be used when a statement is required syntactically but the program 
+                            requires no action. For example:</p>
+                        
+                        <pre>
+                            <code>
+                                >>> while True:
+                                ...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+                                ...
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="main-section" id="Functions">
+                <header ><h2>Functions</h2></header>
+
+                <p>The keyword <span>def</span> introduces a function definition. It must be followed by the function name and the 
+                    parenthesized list of formal parameters. The statements that form the body of the function start at the next line, 
+                    and must be indented.
+                    The first statement of the function body can optionally be a string literal; this string literal is the function’s 
+                    documentation string, or docstring. (More about docstrings can be found in the section Documentation Strings.) 
+                    There are tools which use docstrings to automatically produce online or printed documentation, or to let the 
+                    user interactively brow
+                    We can create a function that writes the Fibonacci series to an arbitrary boundary:
+                </p>
+                <pre>
+                    <code>
+                        >>> def fib(n):    # write Fibonacci series up to n
+                        ...     """Print a Fibonacci series up to n."""
+                        ...     a, b = 0, 1
+                        ...     while a < n:
+                        ...         print(a, end=' ')
+                        ...         a, b = b, a+b
+                        ...     print()
+                        ...
+                        >>> # Now call the function we just defined:
+                        ... fib(2000)
+                        0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+                    </code>
+                </pre>
+            </section>
+
+            <section class="main-section" id="DataStructures">
+                <header >
+                    <h2>DataStructures</h2>
+                </header>
+                <p>
+                    Section Coming Soon...
+                </p>
+            </section>
+
+            <section class="main-section" id="Understanding_Modules">
+                <header >
+                    <h2>Understanding Modules</h2>
+                </header>
+                <p>
+                    If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a script. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you’ve written in several programs without copying its definition into each program.
+
+To support this, Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module; definitions from a module can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level and in calculator mode).
+                </p>
+                <pre>
+                    <code>
+                        # Fibonacci numbers module
+
+                        def fib(n):    # write Fibonacci series up to n
+                            a, b = 0, 1
+                            while a < n:
+                                print(a, end=' ')
+                                a, b = b, a+b
+                            print()
+
+                        def fib2(n):   # return Fibonacci series up to n
+                            result = []
+                            a, b = 0, 1
+                            while a < n:
+                                result.append(a)
+                                a, b = b, a+b
+                            return result
+                    </code>
+                </pre>
+            </section>
+
+            <section class="main-section" id="Errors_and_Exceptions">
+                <header >
+                    <h2>Errors and Exceptions</h2>
+                </header>
+                <ol>
+                    <li><h3>Errors</h3>
+                        <p>
+                            Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python:
+                        </p>
+
+                        <pre>
+                            <code>
+                                >>> while True print('Hello world')
+                                File "<stdin>", line 1
+                                    while True print('Hello world')
+                                                ^
+                                SyntaxError: invalid syntax
+                            </code>
+                        </pre>
+                    </li>
+
+                    <li><h3>Exceptions</h3>
+                        <p>
+                            Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal: you will soon learn how to handle them in Python programs. Most exceptions are not handled by programs, however, and result in error messages as shown here:
+                        </p>
+
+                        <pre>
+                            <code>
+                                >>> 10 * (1/0)
+                                Traceback (most recent call last):
+                                File "<stdin>", line 1, in <module>
+                                ZeroDivisionError: division by zero
+                                >>> 4 + spam*3
+                                Traceback (most recent call last):
+                                File "<stdin>", line 1, in <module>
+                                NameError: name 'spam' is not defined
+                                >>> '2' + 2
+                                Traceback (most recent call last):
+                                File "<stdin>", line 1, in <module>
+                                TypeError: Can't convert 'int' object to str implicitly
+                            </code>
+                        </pre>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="main-section" id="Classes">
+                <header ><h2>Classes</h2></header>
+                <p>
+                    Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by its class) for modifying its state.
+                    Compared with other programming languages, Python’s class mechanism adds classes with a minimum of new syntax and semantics. It is a mixture of the class mechanisms found in C++ and Modula-3. Python classes provide all the standard features of Object Oriented Programming: the class inheritance mechanism allows multiple base classes, a derived class can override any methods of its base class or classes, and a method can call the method of a base class with the same name. Objects can contain arbitrary amounts and kinds of data. As is true for modules, classes partake of the dynamic nature of Python: they are created at runtime, and can be modified further after creation.
+                </p>
+                <pre>
+                    <code>
+                        def scope_test():
+                            def do_local():
+                                spam = "local spam"
+
+                            def do_nonlocal():
+                                nonlocal spam
+                                spam = "nonlocal spam"
+
+                            def do_global():
+                                global spam
+                                spam = "global spam"
+
+                            spam = "test spam"
+                            do_local()
+                            print("After local assignment:", spam)
+                            do_nonlocal()
+                            print("After nonlocal assignment:", spam)
+                            do_global()
+                            print("After global assignment:", spam)
+
+                        scope_test()
+                        print("In global scope:", spam)
+                    </code>
+                </pre>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,134 @@
+
+
+/**
+* Changes for Navigation bar
+*/
+#navbar {
+    width: 250px;
+    height: 650px;
+    background-color: wheat;
+    top: 0;
+    left: 0;
+    margin:auto;
+    position: fixed;
+    z-index: 1;
+}
+
+#navbar header {
+    margin: 30px 0px;
+    text-align: center;
+    font: 2em 'Berkshire Swash', Helvetica, sans-serif;
+    color: #2b2b2b;
+    
+}
+
+hr {
+    margin-bottom: -10px;
+}
+
+
+#navbar ul {
+    margin: 10px 0px 0px -20px;
+    max-width: auto;
+    height: 500px;
+    list-style-type: none;
+    overflow: scroll;
+    white-space: nowrap;
+}
+
+#navbar li {
+    margin-top: 1.5em;
+    border-bottom: 1px solid slategrey;
+    padding: 10px;
+    background-color: yellowgreen;
+}
+
+.nav-link {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+}
+
+#navbar a {
+    display:block;
+    text-decoration: none;
+}
+
+/**
+* Changes for main doc inside body
+*/
+#main-doc {
+    width: auto;
+    height: 100%;
+    margin-left: 250px;
+}
+
+/**
+* Changes for headings and paragraph
+*/
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 25px;
+    color:darksalmon;
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-left: 13px;
+    color: darkgoldenrod;
+}
+
+h4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    margin-left: 20px;
+    color:deepskyblue;
+}
+
+p {
+    margin-left: 25px;
+    line-height: 1.5em;
+}
+
+/**
+* Changes for span
+*/
+span {
+    background-color: lightblue;
+    font-style: oblique;
+}
+
+/**
+* Changes for Code block
+*/
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    overflow: auto;
+    display: block;
+    word-wrap: break-word;
+    padding: 1em 1.5em;
+    width:700px;
+}
+
+code {
+    margin-left: -40px;
+}
+
+@media screen and (max-height: 600px), (max-width: 500px)  {
+    .nav-link {
+         font:normal;
+    }
+
+    #navbar li {
+        margin-top: 1em;
+        padding: 2px;
+    }
+}
