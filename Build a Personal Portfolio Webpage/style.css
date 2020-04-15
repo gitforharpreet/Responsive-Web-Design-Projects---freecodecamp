@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,500&display=swap');
+
+#container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+
+    background-color: darkgrey;
+    padding: 0px;
+    margin:0px;
+    height:auto;
+    align-content: space-evenly;
+
+}
+
+#navbar {
+    text-align: right;
+    padding: 20px 0;
+    background-color:tomato;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+#navbar ul {
+    list-style: none;
+    height: 20px;
+    margin: 10px;
+}
+
+#navbar ul li {
+    display: inline;
+    margin-left: 20px;
+    margin-right: 10px;    
+}
+
+#navbar a {
+    color:white;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#welcome-section {
+    background-image: linear-gradient(90deg, grey, black);
+    height: 100vh;
+    text-align: center;
+}
+
+#welcome-section h1 {
+    margin-top: 20%;
+    color: white;
+    font-family: 'Rubik', 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 4em;
+}
+
+#welcome-section h2 {
+    color: yellow;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+#projects {
+    width: auto;
+    height: 100%;
+    background-color: #3e4b5e;
+    
+}
+
+#projects h2 {
+    text-align: center;
+    color:white;
+    font-size: 2em;
+    margin: 50px;
+}
+
+.project-tile {
+    margin: 50px;
+    margin-top: 10px;
+    width: 300px;
+    height: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #828008;
+    display: inline-block;
+    position:relative;
+
+}
+
+.project-tile_div1 {
+    width: 300px;
+    height: 250px;
+    position:absolute;
+}
+
+.project-tile_div2 {
+    width: 300px;
+    height: 100px;
+    top: 250px;
+    position: absolute;
+    
+}
+
+
+#img1 {
+    width: 300px;
+    height: 250px;
+}
+
+.project-tile h3 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+
+.project-tile p {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+
+#tic_tac_div {
+    background-color: wheat;
+    text-align: center;
+}
+
+#tic_tac_div h2 {
+    color:chocolate;
+}
+
+#contact {
+    width: auto;
+    height: auto;
+    background-color:#824b4b;
+}
+
+#contact h2 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: wheat;
+    font-size: 3em;
+}
+
+#contactbar ul {
+    list-style: none;
+    text-align: center;
+}
+
+#contactbar ul li {
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px;  
+}
+
+#contactbar a {
+    color: wheat;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+@media screen and (max-width: 600px) {
+
+    #welcome-section h1 {
+       font-size: 3em;
+    }
+
+    #projects h2 {
+        font-size: 1em;
+    }
+
+}
